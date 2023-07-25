@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Cart Quantity</h1>
+        <div class="buttons">
+            <button onclick="log()">Show quality</button>
+            <button onclick="add(1)">Add to cart</button>
+            <button onclick="add(2)">+2</button>
+            <button onclick="add(3)">+3</button>
+            <button onclick="add(-cartQuantity)">Reset cart</button>
+        </div>
+        <script>
+			let cartQuantity = 0;
+			function add(number) {
+				cartQuantity+=number;
+				log()
+			}
+			function log(){
+				console.log('Car quantity:' + cartQuantity);
+			}
+		</script>
+    </body>
+</html>
