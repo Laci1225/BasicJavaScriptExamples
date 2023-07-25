@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="row">
+            <button onclick="show()">1</button>
+            <button onclick="show()">2</button>
+            <button onclick="show()">3</button>
+            <button onclick="show()">+</button>
+        </div>
+        <div class="row">
+            <button onclick="show()">4</button>
+            <button onclick="show()">5</button>
+            <button onclick="show()">6</button>
+            <button onclick="show()">-</button>
+        </div>
+        <div class="row">
+            <button onclick="show()">7</button>
+            <button onclick="show()">8</button>
+            <button onclick="show()">9</button>
+            <button onclick="show()">*</button>
+        </div>
+        <div class="row">
+            <button onclick="show()">/</button>
+            <button onclick="calculate()">=</button>
+            <label>
+                <textarea id="calc" rows="1"></textarea>
+            </label>
+        </div>
+
+        <script>
+            let calculation = "";
+
+            function show() {
+                let clickedButton = event.target.textContent;
+                console.log(clickedButton.toString());
+                calculation += clickedButton
+                let innerHt = document.getElementById("calc");
+                innerHt.innerText = calculation;
+            }
+            function calculate() {
+                let innerHt = document.getElementById("calc");
+                calculation = eval(calculation);
+                innerHt.innerText = calculation;
+            }
+        </script>
+
+    </body>
+</html>
