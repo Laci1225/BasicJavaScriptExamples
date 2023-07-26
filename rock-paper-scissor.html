@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body onload="randomOption()">
+        <button onclick="choice()">Rock</button>
+        <button onclick="choice()">Paper</button>
+        <button onclick="choice()">Scissor</button>
+        <button onclick="randomOptionn()">Reload</button>
+        <label for="ai">
+            <textarea id="ai"></textarea>
+        </label>
+        <script>
+            function randomOption() {
+                const options = ["Rock", "Paper", "Scissor"];
+                const randomIndex = Math.floor(Math.random() * options.length);
+                const textarea = document.getElementById("ai");
+                textarea.value = options[randomIndex];
+            }
+
+            function randomOptionn() {
+                setTimeout(() => {
+                    const textarea = document.getElementById("ai");
+                    textarea.value = "Generating...";
+                    setTimeout(() => {
+                        randomOption();
+                    }, 3000)
+                });
+            }
+
+            function choice() {
+                const textarea = document.getElementById("ai");
+                let clickedButton = event.target.textContent;
+                let aiChoice = textarea.value;
+                if (clickedButton === aiChoice) {
+                    alert("Draw")
+                } else if (
+                    (clickedButton === "Rock" && aiChoice === "Scissors") ||
+                    (clickedButton === "Paper" && aiChoice === "Rock") ||
+                    (clickedButton === "Scissors" && aiChoice === "Paper")
+                ) {
+                    alert("You Win!");
+                } else {
+                    alert("You Lose!");
+                }
+                randomOptionn();
+
+            }
+        </script>
+    </body>
+</html>
