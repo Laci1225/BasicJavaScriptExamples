@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ff87f5;
+    color: #fff;
+}
+.button-rock {
+    background-color: #ff3e41;
+}
+
+.button-paper {
+    background-color: #39bf74;
+}
+
+.button-scissor {
+    background-color: #007bff;
+}
+button:hover {
+    background-color: #3273d0;
+}
+
+textarea {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+    resize: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 4em;
+}
