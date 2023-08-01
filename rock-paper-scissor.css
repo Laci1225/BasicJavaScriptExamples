@@ -1,31 +1,36 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #1f1f1f;
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
+.reset {
+    border-radius: 0.3em;
     margin: 5px;
+    padding: 10px 20px;
+    background-color: unset;
     cursor: pointer;
-    background-color: #ff87f5;
     color: #fff;
 }
-.button-rock {
-    background-color: #ff3e41;
+.button-rock, .button-paper, .button-scissor{
+    width: 5em;
+    height: 5em;
+    color: #fff;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: unset;
+    border: white 0.14em solid;
+    border-radius: 50%
 }
-
-.button-paper {
-    background-color: #39bf74;
-}
-
-.button-scissor {
-    background-color: #007bff;
+.rps{
+    width: 2.5em;
+    height: 2.5em;
+    justify-content: center;
+    align-items: center;
 }
 button:hover {
     background-color: #3273d0;

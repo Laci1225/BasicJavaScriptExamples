@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="rock-paper-scissor.css">
     </head>
     <body onload="randomOption()">
-        <button class="button-rock" onclick="choice()">Rock</button>
-        <button class="button-paper" onclick="choice()">Paper</button>
-        <button class="button-scissor" onclick="choice()">Scissor</button>
+        <button class="button-rock" onclick="choice()"><img class="rps" src="img/rock-emoji.png" alt="rock"></button>
+        <button class="button-paper" onclick="choice()"><img class="rps" src="img/paper-emoji.png" alt="paper"></button>
+        <button class="button-scissor" onclick="choice()"><img class="rps" src="img/scissors-emoji.png" alt="scissors"></button>
         <label for="ai">
             <textarea id="ai" readonly></textarea>
         </label>
@@ -19,6 +19,6 @@
             <div class="scoreBoard"></div>
             <script src="rockPaperScissor.js"></script>
         </div>
-        <button onclick="reset()">Reset Score</button>
+        <button class="reset" onclick="reset()">Reset Score</button>
     </body>
 </html>

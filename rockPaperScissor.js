@@ -8,7 +8,7 @@ let scoreBoard = {
 function randomOption() {
     scoreBoard = JSON.parse(localStorage.getItem("score"));
 
-    const options = ["Rock", "Paper", "Scissor"];
+    const options = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * options.length);
     const textarea = document.getElementById("ai");
     textarea.value = "Done now choose";
@@ -35,17 +35,16 @@ function choice() {
         pop.style.color = "Red"
         pop.style.fontSize = "5em";
         //alert("Dont do that");
-    }
-    else {
+    } else {
         const pop = document.querySelector('.pop');
         pop.innerHTML = `<div class="decision"></div>
             <div class="picks"></div>
             <div class="scoreBoard"></div>
             <script src="rockPaperScissor.js"></script>`
-        pop.style.color = ""
+        pop.style.color = "white"
         pop.style.fontSize = "1em";
     }
-    let clickedButton = event.target.textContent;
+    let clickedButton = event.target.alt;
     let aiChoice = textValue;
 
     const decision = document.querySelector('.decision');
@@ -60,9 +59,9 @@ function choice() {
         scoreBoard.tie++;
         decision.innerHTML = "Draw"
     } else if (
-        (clickedButton === "Rock" && aiChoice === "Scissor") ||
-        (clickedButton === "Paper" && aiChoice === "Rock") ||
-        (clickedButton === "Scissor" && aiChoice === "Paper")
+        (clickedButton === "rock" && aiChoice === "scissors") ||
+        (clickedButton === "paper" && aiChoice === "rock") ||
+        (clickedButton === "scissors" && aiChoice === "paper")
     ) {
         scoreBoard.win++;
         decision.innerHTML = `You Win`
@@ -70,7 +69,9 @@ function choice() {
         scoreBoard.lose++;
         decision.innerHTML = `You Lose!`
     }
-    picks.innerHTML = "You picked " + clickedButton + " - " + aiChoice + " computer picked ";
+    picks.innerHTML = `You picked <img class="rps" src="img/${clickedButton}-emoji.png" alt="${clickedButton}"> - 
+    <img class="rps" src="img/${aiChoice}-emoji.png" alt="${aiChoice}"> computer picked</div>`;
+
     score.innerHTML = scb();
     localStorage.setItem("score", JSON.stringify(scoreBoard));
     randomOptionn();
