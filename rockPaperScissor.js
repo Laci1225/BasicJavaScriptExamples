@@ -29,28 +29,50 @@ function scb() {
 
 function choice() {
     if (document.getElementById("ai").value === "Generating...") {
-        alert("Dont do that");
-        return;
+        const pop = document.querySelector('.pop');
+        pop.style.padding = "1em";
+        pop.innerHTML = "<div>Dont do that</div>"
+        pop.style.color = "Red"
+        pop.style.fontSize = "5em";
+        //alert("Dont do that");
+    }
+    else {
+        const pop = document.querySelector('.pop');
+        pop.innerHTML = `<div class="decision"></div>
+            <div class="picks"></div>
+            <div class="scoreBoard"></div>
+            <script src="rockPaperScissor.js"></script>`
+        pop.style.color = ""
+        pop.style.fontSize = "1em";
     }
     let clickedButton = event.target.textContent;
     let aiChoice = textValue;
+
+    const decision = document.querySelector('.decision');
+    decision.style.padding = "1em";
+    const picks = document.querySelector('.picks');
+    picks.style.padding = "1em";
+    const score = document.querySelector('.scoreBoard');
+    score.style.padding = "1em";
+
     console.log(clickedButton + aiChoice);
     if (clickedButton === aiChoice) {
         scoreBoard.tie++;
-        alert("Draw " + textValue + '\n' + scb()) //TODO to innerHtml not to alert
+        decision.innerHTML = "Draw"
     } else if (
-        (clickedButton === "Rock" && aiChoice === "Scissors") ||
+        (clickedButton === "Rock" && aiChoice === "Scissor") ||
         (clickedButton === "Paper" && aiChoice === "Rock") ||
-        (clickedButton === "Scissors" && aiChoice === "Paper")
+        (clickedButton === "Scissor" && aiChoice === "Paper")
     ) {
         scoreBoard.win++;
-        alert("You Win! " + textValue + '\n' + scb());
+        decision.innerHTML = `You Win`
     } else {
         scoreBoard.lose++;
-        alert("You Lose! " + textValue + '\n' + scb());
+        decision.innerHTML = `You Lose!`
     }
+    picks.innerHTML = "You picked " + clickedButton + " - " + aiChoice + " computer picked ";
+    score.innerHTML = scb();
     localStorage.setItem("score", JSON.stringify(scoreBoard));
-
     randomOptionn();
 }
 
@@ -60,5 +82,8 @@ function reset() {
         tie: 0,
         lose: 0
     };
-    localStorage.setItem("score",JSON.stringify(scoreBoard));
+    const score = document.querySelector('.scoreBoard');
+    score.style.padding = "1em";
+    score.innerHTML = scb();
+    localStorage.setItem("score", JSON.stringify(scoreBoard));
 }

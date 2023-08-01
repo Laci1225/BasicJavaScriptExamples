@@ -10,11 +10,15 @@
         <button class="button-rock" onclick="choice()">Rock</button>
         <button class="button-paper" onclick="choice()">Paper</button>
         <button class="button-scissor" onclick="choice()">Scissor</button>
-        <button onclick="reset()">Reset Score</button>
         <label for="ai">
-            <textarea id="ai" readonly ></textarea>
+            <textarea id="ai" readonly></textarea>
         </label>
-        <script src="rockPaperScissor.js"></script>
-        <div id="scoreBoard"></div>
+        <div class="pop">
+            <div class="decision"></div>
+            <div class="picks"></div>
+            <div class="scoreBoard"></div>
+            <script src="rockPaperScissor.js"></script>
+        </div>
+        <button onclick="reset()">Reset Score</button>
     </body>
 </html>
