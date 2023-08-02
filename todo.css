@@ -1,0 +1,31 @@
+.flexx {
+    display: flex;
+}
+
+#todoText, .inpText {
+    width: 200px;
+    height: 20px;
+    border: 2px solid black;
+    padding: 2px;
+    margin: 16px 10px 16px 0;
+}
+
+#todoDate,.inpDate  {
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 16px 0 16px 0;
+}
+.inpDate{
+    margin-left: 3px;
+}
+#todoDate{
+    margin-right: -3px;
+}
+.add-todo,.remove-todo{
+    width: 100px;
+    height: 26px;
+    margin: 16px 0 16px 10px;
+}
+
