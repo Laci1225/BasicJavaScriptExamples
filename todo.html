@@ -8,11 +8,11 @@
     </head>
     <body>
         <h4>Todo list</h4>
-        <div class="inputFields">
-           <div> <label for="todoText" hidden="hidden"></label><input id="todoText" type="text"></div>
-           <div> <label for="todoDate" hidden="hidden"></label><input id="todoDate" type="date"></div>
-            <button class="add-todo" onclick="addFields()">Add</button>
-        </div>
+            <div class="inputFields">
+                <div><label for="todoText" hidden="hidden"></label><input id="todoText" type="text" required></div>
+                <div><label for="todoDate" hidden="hidden"></label><input id="todoDate" type="date"></div>
+                <button class="add-todo" onclick="addFields()" type="submit">Add</button>
+            </div>
         <div class="todo-fields"></div>
 
         <script src="todo.js"></script>
