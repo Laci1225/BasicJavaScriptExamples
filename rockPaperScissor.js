@@ -24,7 +24,7 @@ function randomOptionn() {
 }
 
 function scb() {
-    return `Win: ${scoreBoard.win} Tie: ${scoreBoard.tie} Lose: ${scoreBoard.lose}`
+    return `Win: ${scoreBoard.win} Tie: ${scoreBoard.tie} Lose: ${scoreBoard.lose}`;
 }
 
 function choice() {
@@ -57,20 +57,20 @@ function choice() {
     console.log(clickedButton + aiChoice);
     if (clickedButton === aiChoice) {
         scoreBoard.tie++;
-        decision.innerHTML = "Draw"
+        decision.innerHTML = "Draw";
     } else if (
         (clickedButton === "rock" && aiChoice === "scissors") ||
         (clickedButton === "paper" && aiChoice === "rock") ||
         (clickedButton === "scissors" && aiChoice === "paper")
     ) {
         scoreBoard.win++;
-        decision.innerHTML = `You Win`
+        decision.innerHTML = `You Win`;
     } else {
         scoreBoard.lose++;
-        decision.innerHTML = `You Lose!`
+        decision.innerHTML = `You Lose!`;
     }
     picks.innerHTML = `You picked <img class="rps" src="img/${clickedButton}-emoji.png" alt="${clickedButton}"> - 
-    <img class="rps" src="img/${aiChoice}-emoji.png" alt="${aiChoice}"> computer picked</div>`;
+    <img class="rps" src="img/${aiChoice}-emoji.png" alt="${aiChoice}"> computer picked`;
 
     score.innerHTML = scb();
     localStorage.setItem("score", JSON.stringify(scoreBoard));
